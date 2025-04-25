@@ -41,3 +41,5 @@ jobs:
           packages-dir: dist/
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#Repository: realdatadriven/pyetlx
+#Workflow: release.yml
