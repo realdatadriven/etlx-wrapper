@@ -10,7 +10,7 @@ This Python package provides a simple interface to run ETLX workflows directly f
 Install the wrapper from PyPI:
 
 ```bash
-pip install etlx
+pip install etlx-wrapper
 ```
 
 ### 🧩 Requirements
@@ -26,10 +26,10 @@ You also need the ETLX binary:
 ## 🚀 Quick Start
 
 ```python
-from etlx import ETLX
+from etlx_wrapper import ETLX
 import datetime
 
-_etxl = ETLX()\
+etxl = ETLX()\
     .config = "/path/to/config.md"\
     .only = "keyX"\
     .date = datetime.date.today()\
@@ -60,6 +60,6 @@ Visit the [main project](https://github.com/realdatadriven/etlx) for full docume
 
 ---
 
-## 🪪 License
+## License
 
 MIT
