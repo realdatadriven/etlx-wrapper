@@ -29,20 +29,18 @@ You also need the ETLX binary:
 from etlx import ETLX
 import datetime
 
-runner = ETLX (
-    config="config.md",
-    only="SALES",
-    date=datetime.date.today(),
-    file="data.csv"
-)
-
-runner.execute()
+_etxl = ETLX()\
+    .config = "/path/to/config.md"\
+    .only = "keyX"\
+    .date = datetime.date.today()\
+    .file = "data.csv"\
+    .execute()
 ```
 
 You can also pass the path to the ETLX binary if it's not in `PATH`:
 
 ```python
-runner = ETLX(config="config.md", bin="./etlx-linux-amd64")
+runner = ETLX(config="config.md", bin="/path/to/etlx-linux-amd64")
 ```
 
 ---

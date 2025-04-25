@@ -1,3 +1,5 @@
+'''**ETLX** is a modern and highly configurable ETL and reporting tool powered by DuckDB.  
+This Python package provides a simple interface to run ETLX workflows directly from Python.'''
 import os
 import subprocess
 from pathlib import Path
@@ -5,11 +7,12 @@ from datetime import date, datetime
 from typing import Optional, Union, List
 
 class ETLX:
+    '''main class'''
     def __init__(
         self,
-        bin: str = "etlx",                      # Custom path to binary
-        config: str = "config.md",              # Markdown config path
-        date_ref: Union[str, date, datetime] = None,  # Reference date
+        bin: str = "etlx",
+        config: str = "config.md",
+        date_ref: Union[str, date, datetime] = None,
         only: Optional[Union[str, List[str]]] = None,
         skip: Optional[Union[str, List[str]]] = None,
         steps: Optional[str] = None,
@@ -17,7 +20,7 @@ class ETLX:
         clean: bool = False,
         drop: bool = False,
         rows: bool = False,
-        cwd: Union[str, Path] = ".",            # Directory to execute from
+        cwd: Union[str, Path] = ".",
     ):
         self.bin = bin
         self.config = config
@@ -48,6 +51,7 @@ class ETLX:
         return [f"-{key}", str(value)]
 
     def execute(self) -> int:
+        '''Execute ETLX'''
         args = [
             self.bin,
             *self._to_flag("config", self.config),
@@ -60,7 +64,6 @@ class ETLX:
             *self._to_flag("drop", self.drop),
             *self._to_flag("rows", self.rows),
         ]
-
         print(f"[ETLX] Executing: {' '.join(args)} in {self.cwd.resolve()}")
-        result = subprocess.run(args, cwd=self.cwd)#, env=env)
+        result = subprocess.run(args, cwd = self.cwd, check = False) #, env=env)
         return result.returncode
