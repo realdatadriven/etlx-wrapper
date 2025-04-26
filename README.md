@@ -27,7 +27,7 @@ You also need the ETLX binary:
 
 ```python
 import datetime
-from etlx import ETLX
+from etlx_wrapper import ETLX
 
 _etlx = ETLX()
 _etlx.config = "/path/to/config.md"
