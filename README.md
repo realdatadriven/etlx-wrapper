@@ -32,7 +32,7 @@ from etlx_wrapper import ETLX
 _etlx = ETLX()
 _etlx.config = "/path/to/config.md"
 _etlx.only = "keyX"
-_etlx.date = datetime.date.today()
+_etlx.date_ref = datetime.date.today()
 _etlx.file = "data.csv"
 _etlx.execute()
 ```

@@ -47,8 +47,8 @@ class ETLX:
         if isinstance(value, list):
             value = ",".join(value)
         if isinstance(value, bool):
-            return [f"-{key}"]
-        return [f"-{key}", str(value)]
+            return [f"--{key}"]
+        return [f"--{key}", str(value)]
 
     def execute(self) -> int:
         '''Execute ETLX'''
