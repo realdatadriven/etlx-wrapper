@@ -26,15 +26,15 @@ You also need the ETLX binary:
 ## 🚀 Quick Start
 
 ```python
-from etlx_wrapper import ETLX
 import datetime
+from etlx import ETLX
 
-etxl = ETLX()\
-    .config = "/path/to/config.md"\
-    .only = "keyX"\
-    .date = datetime.date.today()\
-    .file = "data.csv"\
-    .execute()
+_etlx = ETLX()
+_etlx.config = "/path/to/config.md"
+_etlx.only = "keyX"
+_etlx.date = datetime.date.today()
+_etlx.file = "data.csv"
+_etlx.execute()
 ```
 
 You can also pass the path to the ETLX binary if it's not in `PATH`:

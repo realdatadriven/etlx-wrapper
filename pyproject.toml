@@ -1,6 +1,6 @@
 [project]
-name = "etlx-wrapper"
-version = "1.0.0"
+name = "etlx"
+version = "1.0.1"
 description = "Python wrapper for ETLX CLI to run ETL workflows from Python"
 authors = [
     { name="realdatadriven", email="real.datadriven@gmail.com" }
@@ -19,5 +19,5 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["src"]
+packages = ["etlx"]
 include-package-data = true
